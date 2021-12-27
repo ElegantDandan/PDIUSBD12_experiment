@@ -29,7 +29,7 @@ extern "C" {
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
-
+#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* USER CODE BEGIN Private defines */
@@ -39,7 +39,9 @@ extern "C" {
 void MX_GPIO_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
+void led_io_init(void);
+void D12_io_init(void);
+void D12_set_io_dir(bool out);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

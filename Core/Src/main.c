@@ -22,7 +22,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "log.h"
+#include "rtt_log.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -63,7 +64,7 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+  extern void app_main(void);
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -85,7 +86,9 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-
+  led_io_init();
+  D12_io_init();
+  log_init((bool (*)(uint8_t *str, uint16_t n))rtt_log_puts);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -93,9 +96,9 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-    HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
-    HAL_Delay(500);
+
     /* USER CODE BEGIN 3 */
+    app_main();
   }
   /* USER CODE END 3 */
 }
