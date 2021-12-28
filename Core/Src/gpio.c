@@ -88,6 +88,8 @@ void D12_io_init(void)
 	HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 }
 
+#define LED_PINS_MAX	1
+
 void led_io_init(void)
 {
 	GPIO_InitTypeDef GPIO_InitStruct = {0};
@@ -99,6 +101,17 @@ void led_io_init(void)
 	GPIO_InitStruct.Pull = GPIO_NOPULL;
 	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
 	HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+}
+
+void led_on(uint8_t index, bool on)
+{
+	if (index >= 1)
+		return;
+
+	if (on)
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_RESET);
+	else
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, GPIO_PIN_SET);
 }
 
 /* USER CODE END 1 */

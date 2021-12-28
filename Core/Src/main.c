@@ -18,17 +18,20 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "tim.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "log.h"
 #include "rtt_log.h"
+#include "led.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+volatile uint32_t sys_tickclk = 0;
+volatile bool     sys_startup = false;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -85,10 +88,14 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   led_io_init();
   D12_io_init();
   log_init((bool (*)(uint8_t *str, uint16_t n))rtt_log_puts);
+  led_set_flash_mode(0, LED_MODE_FLASH_SLOW);
+
+  HAL_TIM_Base_Start_IT(&htim2);
   /* USER CODE END 2 */
 
   /* Infinite loop */
