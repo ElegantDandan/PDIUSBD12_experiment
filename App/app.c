@@ -9,10 +9,6 @@
 #include "app_type.h"
 #include "log.h"
 
-void _sbrk(void)
-{
-
-}
 
 void app_main(void)
 {

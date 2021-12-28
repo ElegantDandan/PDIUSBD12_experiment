@@ -9,6 +9,11 @@
 #include "SEGGER_RTT.h"
 #include <string.h>
 
+void _sbrk(void)
+{
+
+}
+
 void rtt_log_puts(uint8_t *data, uint32_t length)
 {
     SEGGER_RTT_Write(0, data, length);
