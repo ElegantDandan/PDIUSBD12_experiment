@@ -134,7 +134,7 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>4101</DriverSelection>
+            <DriverSelection>4096</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
@@ -337,7 +337,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;..\Vsf\rtt;..\Vsf\log;..\Vsf;..\App</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -414,32 +414,42 @@
             <File>
               <FileName>app.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Core\Src\app.c</FilePath>
+              <FilePath>..\App\app.c</FilePath>
             </File>
             <File>
               <FileName>log.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Core\Src\log.c</FilePath>
+              <FilePath>..\Vsf\log\log.c</FilePath>
             </File>
             <File>
               <FileName>PDIUSBD12.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Core\Src\PDIUSBD12.c</FilePath>
+              <FilePath>..\App\PDIUSBD12.c</FilePath>
             </File>
             <File>
               <FileName>rtt_log.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Core\Src\rtt_log.c</FilePath>
+              <FilePath>..\Vsf\rtt\rtt_log.c</FilePath>
             </File>
             <File>
               <FileName>SEGGER_RTT.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Core\Src\SEGGER_RTT.c</FilePath>
+              <FilePath>..\Vsf\rtt\SEGGER_RTT.c</FilePath>
             </File>
             <File>
               <FileName>SEGGER_RTT_printf.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Core\Src\SEGGER_RTT_printf.c</FilePath>
+              <FilePath>..\Vsf\rtt\SEGGER_RTT_printf.c</FilePath>
+            </File>
+            <File>
+              <FileName>led.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\App\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>tim.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\tim.c</FilePath>
             </File>
           </Files>
         </Group>

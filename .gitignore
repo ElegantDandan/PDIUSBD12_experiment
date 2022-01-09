@@ -18,3 +18,5 @@
 
 jLinkLog.txt
 MDK-ARM/PDIUSBD12_experiment/PDIUSBD12_experiment.sct
+MDK-ARM/startup_stm32f103xb.lst
+MDK-ARM/EventRecorderStub.scvd

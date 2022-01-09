@@ -40,6 +40,7 @@ void MX_GPIO_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 void led_io_init(void);
+void led_on(uint8_t index, bool on);
 void D12_io_init(void);
 void D12_set_io_dir(bool out);
 /* USER CODE END Prototypes */

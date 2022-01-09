@@ -92,6 +92,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   led_io_init();
   D12_io_init();
+  rtt_log_scope_init();
   log_init((bool (*)(uint8_t *str, uint16_t n))rtt_log_puts);
   led_set_flash_mode(0, LED_MODE_FLASH_SLOW);
 
