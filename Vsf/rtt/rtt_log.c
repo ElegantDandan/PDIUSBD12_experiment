@@ -27,7 +27,8 @@ static char JS_RTT_UpBuffer[128];    // J-Scope RTT Buffer
 
 void rtt_log_scope_init(void)
 {
-	SEGGER_RTT_ConfigUpBuffer(RTT_JS_CHANNEL, "JScope_I4I4I4I4", &JS_RTT_UpBuffer[0], sizeof(JS_RTT_UpBuffer), SEGGER_RTT_MODE_NO_BLOCK_SKIP);
+	SEGGER_RTT_ConfigUpBuffer(0, "RTTUP", NULL, 0, SEGGER_RTT_MODE_NO_BLOCK_SKIP);
+	SEGGER_RTT_ConfigDownBuffer(0, "RTTDOWN", NULL, 0, SEGGER_RTT_MODE_NO_BLOCK_SKIP);
 }
 
 void rtt_log_scope_channel_set(int channel, int value)
